@@ -35,11 +35,12 @@ function rot13(encodedStr) {
   let decodedArr = []; // Your Result goes here
   // Only change code below this line
      for(let i=0;i<encodedStr.length;i++){
-		 if(encodedStr[i]>=A && encodedStr[i]<=Z){
-			 decodedArr.push(lookup.encodedStr[i]);
+		 const char=encodedStr[i]
+		 if(lookup.hasOwnProperty(char)){
+			 decodedArr.push(lookup[char]);
 		 }
 		 else{
-			 decodedArr.push(encodedStr[i]);
+			 decodedArr.push(char);
 		 }
 	 }
   return decodedArr.join(''); //return decodedArr
